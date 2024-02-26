@@ -15,14 +15,14 @@ import com.example.demo.Lopes.simplelandingpage.Models.User;
 import com.example.demo.Lopes.simplelandingpage.Repositories.UserRepository;
 
 @Controller
-@RequestMapping(path="/demo") 
+@RequestMapping(path="/demo")
 public class MainController {
   @Autowired 
   private UserRepository userRepository;
 
   @RequestMapping(value = "/add", method = RequestMethod.POST)
   public @ResponseBody String addNewUser (@RequestParam String name
-      , @RequestParam String email, @RequestParam String mensagem, @RequestParam String situacao) {
+      , @RequestParam String email, @RequestParam String mensagem, @RequestParam String situacao){
     
     User n = new User();
     n.setNome(name);
