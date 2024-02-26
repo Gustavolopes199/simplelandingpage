@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <title>Landing Page</title>
+</head>
+<body>
+    <header>
+        <div id="title">
+            <h1>Aula Web 1</h1>
+        </div>
+
+        <ul>
+            <a href="#"><li>Inicio</li></a>
+            <a href="#"><li>Serviços</li></a>
+            <a href="#"><li>Sobre</li></a>
+            <a href="#"><li>Contato</li></a>
+            <a href="#" id="botaoroxo"><li>Já tem uma conta?</li></a>
+        </ul>
+    </header>
+
+    <main>
+        <aside>
+            <h2>Inscreva-se Agora</h2>
+            <h2><span>Na Newslatter</span></h2>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis soluta odio nesciunt cum, non harum cupiditate consequatur! Consectetur officia omnis aliquam et! Aliquam voluptas laborum nostrum voluptatibus quibusdam soluta exercitationem.</p>
+
+            <form>
+                <input type="text" placeholder="Nome" id="nome">
+                <input type="email" placeholder="E-mail" id="email">
+                <select name="emprego" id="job">
+                    <option value="" selected>Vinculo empregatício</option>
+                    <option value="D">Desempregado</option>
+                    <option value="A">Empregado na área</option>
+                    <option value="B">Empregado em outra área</option>
+                    <option value="C">Empregado em transição de carreira</option>
+                </select> 
+                <textarea rows="3" cols="70" class="message" placeholder="Digite sua mensagem aqui" id="mensagem"> </textarea>
+                <input type="button" onclick="verificaintegridade()" value="Enviar >">
+            </form>
+        </aside>
+
+        <article>
+            <img src="components/images/roxo.png" alt="Mulher de roxo, fazendo yoga">
+        </article>
+    </main>
+    <script src="myscript.js"></script>
+</body>
+</html>
