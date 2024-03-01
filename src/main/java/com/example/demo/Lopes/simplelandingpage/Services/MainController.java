@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.Lopes.simplelandingpage.Models.Aluno;
 import com.example.demo.Lopes.simplelandingpage.Models.User;
+import com.example.demo.Lopes.simplelandingpage.Repositories.AlunoRepository;
 import com.example.demo.Lopes.simplelandingpage.Repositories.UserRepository;
 
 @Controller
@@ -19,6 +21,8 @@ import com.example.demo.Lopes.simplelandingpage.Repositories.UserRepository;
 public class MainController {
   @Autowired 
   private UserRepository userRepository;
+  @Autowired
+  private AlunoRepository alunoRepository;
 
   @RequestMapping(value = "/add", method = RequestMethod.POST)
   public @ResponseBody String addNewUser (@RequestParam String name
@@ -33,8 +37,34 @@ public class MainController {
     return "Saved";
   }
 
+
+  @RequestMapping(value = "/addusuario", method=RequestMethod.POST)
+  public @ResponseBody String requestMethodName(@RequestParam String Curso,@RequestParam String matricula,@RequestParam String nome,@RequestParam String status,@RequestParam int turno) {
+
+
+    Aluno n = new Aluno();
+    n.setCurso(Curso);
+    n.setMatricula(matricula);
+    n.setNome(nome);
+    n.setStatus(status);
+    n.setTurno(turno);
+    alunoRepository.save(n);
+    
+      return "salvo usuario";
+  }
+  
+
   @GetMapping(path="/all")
   public @ResponseBody Iterable<User> getAllUsers() {
     return userRepository.findAll();
   }
+
+   
+  @GetMapping(path="/allaluno")
+  public @ResponseBody Iterable<Aluno> getMethodName() {
+    return alunoRepository.findAll();
+
+    }
+    
+  
 }
